@@ -13,7 +13,7 @@ def login_user(username, password):
     user = get_user_by_username(username)
     if not user:
         return False, "User not found."
-    stored_hash = user[2]  # password_hash
+    stored_hash = user[2]  
     if bcrypt.checkpw(password.encode('utf-8'), stored_hash.encode('utf-8')):
         return True, f"Welcome, {username}!"
     return False, "Invalid password."
