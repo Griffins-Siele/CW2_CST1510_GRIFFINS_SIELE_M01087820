@@ -149,15 +149,5 @@ def main():
         else:
             print("\nError: Invalid option. Please select 1, 2, or 3.")
 
-# Temporary test code (remove before final submission if required)
-# Uncomment to test hashing functions
-"""
-test_password = "SecurePassword123"
-hashed = hash_password(test_password)
-print(f"Hashed: {hashed}")
-print(f"Correct password check: {verify_password(test_password, hashed)}")
-print(f"Wrong password check: {verify_password('wrong', hashed)}")
-"""
-
 if __name__ == "__main__":
     main()
