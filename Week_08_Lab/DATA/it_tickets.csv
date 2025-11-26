@@ -1,0 +1,2 @@
+ticket_id,title,priority,status,assignee,created_date
+TCK-1001,Email outage,High,Open,alice,2025-11-02

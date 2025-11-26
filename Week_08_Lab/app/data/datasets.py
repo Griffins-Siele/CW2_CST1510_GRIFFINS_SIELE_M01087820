@@ -1,11 +1,11 @@
 import pandas as pd
 from pathlib import Path 
-from ..data.db import connect_database
+from .db import connect_database
 
 def load_csv_to_table(csv_path, table_name):
-    """
-    Load a CSV file into the database using pandas.
-    Safe, simple, and works every time.
+    """Load a CSV file into the database using pandas.
+
+    Returns number of rows loaded, or 0 on failure.
     """
     csv_full_path = Path(csv_path)
     

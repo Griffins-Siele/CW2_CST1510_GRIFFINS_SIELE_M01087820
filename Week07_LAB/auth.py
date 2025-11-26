@@ -20,7 +20,6 @@ def verify_password(plain_text_password: str, hashed_password: str) -> bool:
     return bcrypt.checkpw(password_bytes, hashed_bytes)
 
 # User Management Functions 
-
 def user_exists(username: str) -> bool:
     """Checks if a username already exists in the user database."""
     if not os.path.exists(USER_DATA_FILE):
