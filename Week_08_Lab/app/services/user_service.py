@@ -6,8 +6,10 @@ from app.data.schema import create_users_table
 
 def register_user(username, password, role="user"):
     password_hash = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-    insert_user(username, password_hash, role)
-    return True
+    success = insert_user(username, password_hash, role)
+    if success:
+        return True
+    return False
 
 def login_user(username, password):
     user = get_user_by_username(username)
