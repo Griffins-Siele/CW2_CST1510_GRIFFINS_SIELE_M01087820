@@ -19,7 +19,11 @@ def insert_user(username, password_hash, role="user"):
         )
         conn.commit()
         print(f"User '{username}' registered.")
+        return True
     except sqlite3.IntegrityError:
         print(f"Username '{username}' already exists.")
+        return False
     finally:
         conn.close()
+
+    return False
