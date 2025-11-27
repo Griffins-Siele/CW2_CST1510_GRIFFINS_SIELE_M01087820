@@ -32,11 +32,6 @@ A secure, feature-rich Streamlit application demonstrating authentication, CRUD 
 - **Security**: Password change, active sessions, 2FA setup info, account deletion
 - **Logout**: Secure session termination
 
-### 5. **Additional Pages**
-- **Home Page**: Login/Register with tabs
-- **Dashboard**: Protected welcome page (post-login)
-- **About**: Demo page with basic elements
-
 ## Quick Start
 
 ### Prerequisites
@@ -97,7 +92,6 @@ Week_09_lab/
 │   ├── DataManager.py        # CRUD operations for IT tickets
 │   ├── Analytics.py          # Dashboard with visualizations
 │   ├── Settings.py           # User profile & preferences
-│   ├── About.py              # Demo page
 │   └── Analytics.py          # Security/analytics dashboard
 ├── DATA/
 │   ├── it_tickets.csv        # IT support tickets (10 records)
@@ -106,7 +100,7 @@ Week_09_lab/
 └── README.md                 # This file
 ```
 
-## 🔐 Authentication
+## Authentication
 
 ### Register a New Account
 1. On the home page, click the **Register** tab
@@ -129,40 +123,37 @@ Or use the app's register feature.
 
 ## Pages Overview
 
-### 🏠 Home (Home.py)
+### Home (Home.py)
 - Entry point with Login/Register tabs
 - Secure authentication with bcrypt
-- Redirects to Dashboard post-login
+- Redirects to DataManager post-login
 
-### 📈 Dashboard (pages/Dashboard.py)
+### Dashboard (pages/Dashboard.py)
 - Protected page (login required)
 - Welcome message with username
 - Links to other sections
 
-### 📋 Data Manager (pages/DataManager.py)
+### Data Manager (pages/DataManager.py)
 - **Read Tab**: View and filter IT tickets by status/priority
 - **Create Tab**: Add new tickets with auto-generated IDs (TCK-####)
 - **Update Tab**: Edit existing tickets
 - **Delete Tab**: Remove tickets with confirmation
 - Data stored in session (persists during session, resets on refresh)
 
-### 📊 Analytics (pages/Analytics.py)
+### Analytics (pages/Analytics.py)
 - **KPI Cards**: Total, high-priority, open/closed ticket metrics
 - **Visualizations**: Charts for status, priority, and assignee workload
 - **Filters**: Multi-select status and priority filters
 - **Export**: Download data as CSV or JSON
 - Real-time updates from `DATA/it_tickets.csv`
 
-### ⚙️ Settings (pages/Settings.py)
+### Settings (pages/Settings.py)
 - **Profile Tab**: View/edit username, email, department
 - **Preferences Tab**: Theme, language, notifications, data retention
 - **Security Tab**: Change password, view active sessions, setup 2FA, logout
 - User-friendly interface for account management
 
-### 📖 About (pages/About.py)
-- Demo page showcasing Streamlit UI elements
-
-## 🔒 Security Features
+## Security Features
 
 ✅ **Bcrypt Password Hashing**: Passwords are hashed with 12 rounds of bcrypt (not plaintext)
 ✅ **Session State Management**: Login state tracked securely
@@ -170,13 +161,13 @@ Or use the app's register feature.
 ✅ **Atomic File Operations**: User data saved atomically to prevent corruption
 ✅ **User Isolation**: Each user can only access their own data (in session)
 
-⚠️ **Demo Limitations**:
+**Demo Limitations**:
 - No database (uses CSV & plaintext file storage)
 - Session data resets on page refresh
 - No HTTPS/SSL in demo environment
 - For production, use a proper database and authentication provider
 
-## 📦 Dependencies
+## Dependencies
 
 - **streamlit** (1.0+): Web framework
 - **bcrypt**: Password hashing
@@ -185,7 +176,7 @@ Or use the app's register feature.
 
 See `requirements.txt` for exact versions.
 
-## 🧪 Testing
+## Testing
 
 ### Test Login Flow
 1. Start the app: `python -m streamlit run .\Home.py`
@@ -209,62 +200,3 @@ See `requirements.txt` for exact versions.
 4. Download as CSV/JSON and verify file content
 5. Check KPI metrics for accuracy
 
-## 💡 Usage Tips
-
-- **Session Persistence**: Changes to tickets persist during your session but reset when the page refreshes
-- **Filtering**: Use multi-select filters in Analytics for complex queries
-- **Export**: Download data regularly for backups
-- **User Management**: Check `users.txt` to see registered users (hashed passwords only)
-- **Theme**: Change theme in Settings > Preferences for dark mode
-
-## 🐛 Troubleshooting
-
-### "streamlit: command not found"
-- Ensure virtual environment is activated: `.\.venv\Scripts\Activate.ps1`
-- Or use: `python -m streamlit run .\Home.py`
-
-### "No such file or directory: IT_tickets.csv"
-- Verify `DATA/it_tickets.csv` exists
-- Run from `Week_09_lab` folder: `cd Week_09_lab`
-
-### "ModuleNotFoundError: No module named 'bcrypt'"
-- Install dependencies: `python -m pip install -r requirements.txt`
-
-### Password not working after registration
-- Check `users.txt` file is created in `Week_09_lab/` folder
-- Verify file has correct format: `username:hashed_password`
-
-### Page not showing in sidebar
-- Ensure page file is in `pages/` folder (lowercase)
-- File name should start with page name or number (e.g., `DataManager.py`)
-- Restart Streamlit if pages don't appear
-
-## 📝 Notes
-
-- All changes to tickets are stored in **session memory** (not persisted to disk in this demo)
-- User credentials are persisted to `users.txt` with bcrypt hashing
-- CSV data is read-only for analytics (changes in DataManager don't update the CSV)
-- For production use, implement a proper database (SQLite, PostgreSQL, etc.)
-
-## 🎯 Lab Learning Objectives
-
-✅ Implement Streamlit multi-page applications
-✅ User authentication with session state
-✅ Secure password hashing (bcrypt)
-✅ CRUD operations with forms
-✅ Data visualization and filtering
-✅ File-based persistence
-✅ User settings and preferences
-
-## 📚 References
-
-- [Streamlit Documentation](https://docs.streamlit.io)
-- [bcrypt Documentation](https://github.com/pyca/bcrypt)
-- [Pandas Documentation](https://pandas.pydata.org)
-- [NumPy Documentation](https://numpy.org)
-
----
-
-**Last Updated:** November 26, 2025
-**Version:** 1.0
-**Author:** Student (CST1510)
