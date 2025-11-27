@@ -18,10 +18,10 @@ if st.session_state.logged_in:
     st.stop()  # Don’t show login/register again
 
 
-# ---------- Tabs: Login / Register ----------
+#  Login / Register
 tab_login, tab_register = st.tabs(["Login", "Register"])
 
-# ----- LOGIN TAB -----
+# Login Tab
 with tab_login:
     st.subheader("Login")
 
@@ -35,13 +35,13 @@ with tab_login:
             st.session_state.username = login_username
             st.success(f"Welcome back, {login_username}! ")
 
-            # Redirect to dashboard page
-            st.switch_page("pages/DataManager.py")
+            # Redirect to datamanager page
+            st.switch_page("pages/📋DataManager.py")
         else:
             st.error("Invalid username or password.")
 
 
-# ----- REGISTER TAB -----
+# Register Tab
 with tab_register:
     st.subheader("Register")
 
