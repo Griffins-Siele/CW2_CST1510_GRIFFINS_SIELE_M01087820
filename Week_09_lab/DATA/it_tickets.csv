@@ -1,11 +1,11 @@
 ticket_id,title,priority,status,assignee,created_date
-TCK-1001,Email outage,High,Open,alice,2025-11-02
+TCK-1001,Email outage,High,Open,Griffins,2025-11-02
 TCK-1002,Network connectivity issue,High,In Progress,bob,2025-11-01
 TCK-1003,Printer configuration,Medium,Closed,charlie,2025-10-31
-TCK-1004,Password reset request,Low,Closed,diana,2025-10-30
-TCK-1005,Software license renewal,Medium,Open,alice,2025-10-29
+TCK-1004,Password reset request,Low,Closed,Siele,2025-10-30
+TCK-1005,Software license renewal,Medium,Open,Griffins,2025-10-29
 TCK-1006,VPN access issue,High,In Progress,bob,2025-10-28
 TCK-1007,Email forwarding setup,Low,Closed,charlie,2025-10-27
-TCK-1008,Hardware replacement,Medium,Open,diana,2025-10-26
-TCK-1009,Security patch deployment,High,In Progress,alice,2025-10-25
+TCK-1008,Hardware replacement,Medium,Open,Siele,2025-10-26
+TCK-1009,Security patch deployment,High,In Progress,Griffins,2025-10-25
 TCK-1010,Backup verification,Low,Closed,bob,2025-10-24

@@ -47,15 +47,15 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     if st.button("📋 Data Manager", use_container_width=True):
-        st.switch_page("pages/DataManager.py")
+        st.switch_page("pages/📈Dashboard.py")
 
 with col2:
     if st.button("📊 Analytics", use_container_width=True):
-        st.switch_page("pages/Analytics.py")
+        st.switch_page("pages/📊Analytics.py")
 
 with col3:
     if st.button("⚙️ Settings", use_container_width=True):
-        st.switch_page("pages/Settings.py")
+        st.switch_page("pages/⚙️Settings.py")
 
 st.divider()
 
