@@ -1,0 +1,13 @@
+# Ignore generated files and secrets
+__pycache__/
+*.pyc
+.env
+
+# Streamlit local config (optional)
+.streamlit/
+
+# Python environment
+venv/
+
+# Data
+DATA/*.csv

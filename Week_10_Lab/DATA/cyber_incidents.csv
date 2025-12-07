@@ -1,0 +1,11 @@
+date,incident_type,severity,status,description,reported_by
+2025-11-01,Phishing,High,Open,Phishing email targeting finance team,alice
+2025-10-28,Malware,Medium,Closed,Workstation infected with trojan,bob
+2025-10-25,DDoS Attack,High,Closed,Website under DDoS attack - mitigated,charlie
+2025-10-22,Data Breach,Critical,Closed,Unauthorized access to customer database,diana
+2025-10-18,Ransomware,High,In Progress,File encryption detected on server,alice
+2025-10-15,Privilege Escalation,Medium,Closed,Unauthorized admin access attempt,bob
+2025-10-12,Social Engineering,Medium,Open,Staff called impersonating IT support,charlie
+2025-10-09,Vulnerability Scan,Low,Closed,Routine penetration test completed,diana
+2025-10-05,Zero-day Exploit,Critical,In Progress,Unpatched system vulnerability discovered,alice
+2025-09-30,Insider Threat,High,Open,Unusual data access patterns detected,bob
