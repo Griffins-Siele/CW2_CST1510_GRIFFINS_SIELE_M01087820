@@ -46,10 +46,10 @@ if "tickets_data" not in st.session_state:
 
 st.divider()
 
-# ===== TABS FOR CRUD OPERATIONS =====
-tab_read, tab_create, tab_update, tab_delete = st.tabs(["📖 Read", " Create", " Update", " Delete"])
+# Tab for CRUD operations
+tab_read, tab_create, tab_update, tab_delete = st.tabs(["Read", " Create", " Update", " Delete"])
 
-# ===== READ TAB =====
+# Read Tab
 with tab_read:
     st.subheader("View All Tickets")
     
@@ -88,30 +88,7 @@ with tab_read:
     st.write(f"**Filtered Results: {len(filtered_df)} tickets**")
     st.dataframe(filtered_df, use_container_width=True, height=300)
     
-    # Export options
-    col_csv, col_json = st.columns(2)
-    
-    with col_csv:
-        csv = filtered_df.to_csv(index=False)
-        st.download_button(
-            label=" Download CSV",
-            data=csv,
-            file_name="tickets.csv",
-            mime="text/csv",
-            use_container_width=True
-        )
-    
-    with col_json:
-        json = filtered_df.to_json(orient="records", indent=2)
-        st.download_button(
-            label=" Download JSON",
-            data=json,
-            file_name="tickets.json",
-            mime="application/json",
-            use_container_width=True
-        )
-
-# ===== CREATE TAB =====
+# Create Tab
 with tab_create:
     st.subheader("Create New Ticket")
     
@@ -153,7 +130,7 @@ with tab_create:
                 st.success(f" Ticket {new_id} created successfully!")
                 st.balloons()
 
-# ===== UPDATE TAB =====
+# Update Tab
 with tab_update:
     st.subheader("Update Existing Ticket")
     
@@ -206,7 +183,7 @@ with tab_update:
             
             st.success(f" Ticket {ticket_to_update} updated successfully!")
 
-# ===== DELETE TAB =====
+# Delete Tab
 with tab_delete:
     st.subheader("Delete Ticket")
     st.warning(" This action cannot be undone!")
@@ -243,24 +220,3 @@ with tab_delete:
         with col_cancel:
             if st.button(" Cancel", use_container_width=True):
                 st.info("Deletion cancelled.")
-
-st.divider()
-
-# Navigation
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
-    if st.button(" Analytics", use_container_width=True):
-        st.switch_page("pages/Analytics.py")
-
-with col2:
-    if st.button(" Incidents", use_container_width=True):
-        st.switch_page("pages/Incidents.py")
-
-with col3:
-    if st.button(" Users", use_container_width=True):
-        st.switch_page("pages/Users.py")
-
-with col4:
-    if st.button(" Settings", use_container_width=True):
-        st.switch_page("pages/Settings.py")
