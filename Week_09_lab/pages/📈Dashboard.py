@@ -22,21 +22,19 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.metric(
         label="Account Status",
-        value="Active ✅",
+        value="Active",
     )
 
 with col2:
     st.metric(
         label="Pages Available",
-        value="5+",
-        delta="Data Manager, Analytics, Settings, About"
+        value="5+"
     )
 
 with col3:
     st.metric(
         label="Session Duration",
         value="Active",
-        delta="Click Settings to log out"
     )
 
 st.divider()

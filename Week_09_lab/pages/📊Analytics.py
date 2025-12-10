@@ -44,7 +44,6 @@ with col1:
     st.metric(
         label="Total Tickets",
         value=len(df),
-        delta=f"Active: {len(df[df['status'] != 'Closed'])}"
     )
 
 with col2:
@@ -52,7 +51,6 @@ with col2:
     st.metric(
         label="High Priority",
         value=high_priority,
-        delta=f"{round(100*high_priority/len(df), 1)}% of total"
     )
 
 with col3:
@@ -60,7 +58,6 @@ with col3:
     st.metric(
         label="Open Tickets",
         value=open_tickets,
-        delta=f"{round(100*open_tickets/len(df), 1)}% of total"
     )
 
 with col4:
@@ -68,7 +65,6 @@ with col4:
     st.metric(
         label="Closed Tickets",
         value=closed_tickets,
-        delta=f"Completion rate: {round(100*closed_tickets/len(df), 1)}%"
     )
 
 st.divider()

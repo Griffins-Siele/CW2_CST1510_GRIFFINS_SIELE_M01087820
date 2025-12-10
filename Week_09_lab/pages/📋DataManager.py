@@ -172,4 +172,3 @@ with tab_delete:
             ]
             st.success(f"✅ Ticket #{selected_delete_id} deleted successfully!")
             st.rerun()
-st.divider()
