@@ -45,12 +45,16 @@ if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
 
     # OpenAI API call
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        messages=st.session_state.messages
-    ).choices[0].message.content
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=st.session_state.messages
+        ).choices[0].message.content
 
-    with st.chat_message("assistant"):
-        st.markdown(response)
+        with st.chat_message("assistant"):
+            st.markdown(response)
 
-    st.session_state.messages.append({"role": "assistant", "content": response})
+        st.session_state.messages.append({"role": "assistant", "content": response})
+    except Exception as e:
+        st.error(f"❌ API Error: {str(e)}")
+        st.info("Please check your OpenAI API key in the .env file")
