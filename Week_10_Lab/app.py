@@ -1,14 +1,26 @@
 import streamlit as st
 from openai import OpenAI
+from dotenv import load_dotenv
+import os
 
-# Initialize OpenAI client using Streamlit secrets
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+# Load environment variables from .env file
+load_dotenv()
 
-# Streamlit page settings
+# Get the API key from .env
+api_key = os.getenv("OPENAI_API_KEY")
+
+# Safety check
+if not api_key:
+    st.error("❌ OPENAI_API_KEY not found in .env file.")
+    st.stop()
+
+# Initialize OpenAI client
+client = OpenAI(api_key=api_key)
+
 st.set_page_config(page_title="Week 10 ChatGPT App", page_icon="💬")
 st.title("💬 Week 10 - Simple ChatGPT App")
 
-# Initialize chat history in session state
+# Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {
@@ -17,32 +29,28 @@ if "messages" not in st.session_state:
         }
     ]
 
-# Display previous chat messages (skip system role)
+# Display previous messages
 for msg in st.session_state.messages:
     if msg["role"] != "system":
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
 
-# User input box
+# Chat input
 user_input = st.chat_input("Type your message...")
 
 if user_input:
-    # Show user message
     with st.chat_message("user"):
         st.markdown(user_input)
 
-    # Add user message to session history
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-    # Call OpenAI API
-    reply = client.chat.completions.create(
+    # OpenAI API call
+    response = client.chat.completions.create(
         model="gpt-4o",
         messages=st.session_state.messages
     ).choices[0].message.content
 
-    # Display assistant message
     with st.chat_message("assistant"):
-        st.markdown(reply)
+        st.markdown(response)
 
-    # Save assistant message
-    st.session_state.messages.append({"role": "assistant", "content": reply})
+    st.session_state.messages.append({"role": "assistant", "content": response})
