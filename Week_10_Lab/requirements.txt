@@ -1,7 +1,0 @@
-streamlit
-bcrypt
-pandas
-numpy
-plotly
-openai
-python-dotenv
