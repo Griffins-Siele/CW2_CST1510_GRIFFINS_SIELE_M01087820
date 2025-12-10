@@ -25,7 +25,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {
             "role": "system",
-            "content": "You are a helpful assistant for the Week 10 lab."
+            "content": "You are a helpful assistant for a student studying Artificial Intelligence."
         }
     ]
 
