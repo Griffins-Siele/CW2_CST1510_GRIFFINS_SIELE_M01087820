@@ -1,6 +1,6 @@
 # Portfolio Project: Analytics Dashboard
 
-## 🎯 Overview
+## Overview
 
 This is a **capstone project** that integrates comprehensive learning from **Weeks 7-11** of the Data Communications and Networks course. It demonstrates professional software engineering practices through a fully functional **Streamlit-based analytics dashboard**.
 
@@ -10,7 +10,7 @@ This is a **capstone project** that integrates comprehensive learning from **Wee
 
 ---
 
-## 📚 Learning Integration
+## Learning Integration
 
 ### Week 7: Security & Authentication
 - **File**: `app/services/auth_service.py`
@@ -87,7 +87,7 @@ user = User(1, "alice", "alice@example.com", "analyst")
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 ```
 project/
@@ -114,7 +114,7 @@ project/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.9+
@@ -149,7 +149,7 @@ The app will be available at `http://localhost:8501`
 
 ---
 
-## 💡 Features
+## Features
 
 ### ✅ Implemented
 
@@ -179,7 +179,7 @@ The app will be available at `http://localhost:8501`
    - Inheritance and polymorphism
    - Input validation in constructors
 
-### 📋 Key Pages
+### Key Pages
 
 | Page | Features |
 |------|----------|
@@ -190,7 +190,7 @@ The app will be available at `http://localhost:8501`
 
 ---
 
-## 🔐 Security Features
+## Security Features
 
 - ✅ **Bcrypt Password Hashing**: Industry-standard password security
 - ✅ **Input Validation**: All user inputs validated
@@ -200,7 +200,7 @@ The app will be available at `http://localhost:8501`
 
 ---
 
-## 📊 Sample Data
+## Sample Data
 
 The application comes with sample data for demonstration:
 
@@ -230,7 +230,7 @@ bob      | bob@ex.com      | Admin   | Active
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Test Authentication
 ```python
@@ -268,7 +268,7 @@ service = get_data_service()
 
 ---
 
-## 🎓 Learning Outcomes
+## Learning Outcomes
 
 By completing this project, you should be able to:
 
@@ -300,120 +300,13 @@ By completing this project, you should be able to:
 
 ---
 
-## 📝 Code Examples
-
-### Example 1: User Registration with Validation
-```python
-try:
-    success, message = register_user("newuser", "SecurePass123!")
-    if success:
-        st.success(message)
-    else:
-        st.error(message)
-except ValueError as e:
-    st.error(f"Validation error: {e}")
-```
-
-### Example 2: OOP with Inheritance
-```python
-# Create user with automatic validation
-user = User(
-    user_id=1,
-    username="alice",
-    email="alice@example.com",
-    role="analyst"
-)
-
-# Access data through getters
-print(f"{user.get_name()} works as {user.get_role()}")
-```
-
-### Example 3: Data Processing
-```python
-data_service = get_data_service()
-
-# Load data
-df = data_service.load_csv("incidents.csv")
-
-# Filter data
-high_priority = data_service.filter_data(df, severity="High")
-
-# Get statistics
-stats = data_service.get_summary_stats(df)
-```
-
----
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env` file (optional):
-```env
-STREAMLIT_THEME=light
-DATA_DIR=project/DATA
-```
-
-### Streamlit Config
-Configuration is in `Home.py`:
-```python
-st.set_page_config(
-    page_title="Analytics Dashboard",
-    page_icon="📊",
-    layout="wide"
-)
-```
-
----
-
-## 📚 References
-
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [Bcrypt Documentation](https://github.com/pyca/bcrypt)
-- [Pandas Data Analysis](https://pandas.pydata.org/)
-- [Python OOP Guide](https://docs.python.org/3/tutorial/classes.html)
-
----
-
-## 🐛 Troubleshooting
-
-### Issue: "ModuleNotFoundError: No module named 'streamlit'"
-**Solution**: Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-### Issue: Authentication not working
-**Solution**: Ensure `users.txt` exists in the project directory:
-```bash
-touch project/users.txt
-```
-
-### Issue: Data file not found
-**Solution**: Create sample data in `project/DATA/` or check file paths
-
----
-
-## 🤝 Contributing
-
-This is a capstone project for educational purposes. Suggested enhancements:
-
-- [ ] Connect to real database (SQLite/PostgreSQL)
-- [ ] Implement real API integration (Week 10)
-- [ ] Add unit tests for all modules
-- [ ] Create admin dashboard
-- [ ] Implement role-based access control
-- [ ] Add data export functionality
-- [ ] Create user profile management
-
----
-
-## 📄 License
+## License
 
 This project is part of the CST1510 coursework.
 
 ---
 
-## 👤 Author
+## Author
 
 **GRIFFINS SIELE**  
 M01087820  
@@ -421,28 +314,3 @@ Data Communications and Networks
 CW2_CST1510_GRIFFINS_SIELE_M01087820
 
 **GitHub**: https://github.com/Griffins-Siele/CW2_CST1510_GRIFFINS_SIELE_M01087820
-
----
-
-## 📞 Support
-
-For questions or issues, please refer to the course materials or GitHub issues.
-
----
-
-## ✅ Project Status
-
-- [x] Week 7: Authentication module
-- [x] Week 8: Data service
-- [x] Week 9: Streamlit app with session state
-- [x] Week 10: API integration (planned)
-- [x] Week 11: OOP models and architecture
-- [x] Documentation complete
-- [x] All error handling implemented
-- [x] Testing examples provided
-
-**Final Status**: ✅ **COMPLETE & PRODUCTION-READY**
-
----
-
-Last Updated: December 2024
